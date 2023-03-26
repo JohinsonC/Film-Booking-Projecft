@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View all movies</title>
+</head>
+<body>
+<h1>View all Movies</h1>
+
+<table border="1" width=80%>
+<tr><th>Movie_ID</th>
+<th>Movie_name</th>
+<th>Movie_Details</th>
+<th>Movie_Image</th>
+<th>Delete</th></tr>
+<tbody>
+<tr th:each="movie: ${movies}">
+    <td th:text="${movie.movieId}" />
+    <td th:text="${movie.movieName}" />
+	<td th:text="${movie.movieDetails}"></td>
+	<td th:text="${movie.image}"></td>
+	<td><a th:href="@{deletemovie/{id}(id=${movie.movieId})}">Delete</a></td></tr>
+</tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+<style>
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+background-color: white;
+min-height: 100vh;
+}
+.inputs{
+margin-top:20px;
+margin: auto;
+text-align: center;
+}
+.label{
+font-weight:700;
+text-align: center;
+font-size: 17px;
+color: white;
+}
+.head{
+background-color: black;
+color: white;
+margin-bottom: 20px;
+}
+.main
+{
+ background: #fff;
+ background-color:red;
+ width: 500px;
+ display: flex;
+ display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ flex-direction: column;
+ border-radius: 4px;
+ box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+.uploadbutton{
+margin-left:200px;
+color: green;
+padding: 10px 10px 10px 10px;
+}
+.uploadbutton button{
+background-color: rgb(100,100,100);
+color: white;
+}
+</style>
+</head>
+<body>
+<div class=main>
+<div class="head">
+<h1 style="text-align: center;">Inmakes movie theatre</h1>
+<h4 style="text-align: center;">UPLOAD LATEST MOVIES HERE</h4>
+</div>
+<form action="addmovie" method="post">
+<div class="label">
+<Label>Enter movie name</Label> 
+</div>
+<div class="inputs">
+<input type="text"id="movie_name" name="movieName"><br><br>
+</div>
+<div class="label">
+<Label>Enter movie details</Label> 
+</div>
+<div class="inputs">
+<input type="text"id="movie_details"name="movieDetails"><br><br>
+</div>
+<div class="label">
+<Label>Enter movie image</Label> 
+</div>
+<div class="inputs">
+<input type="text" id="image"name="image"><br><br>
+</div>
+
+<div class="uploadbutton">
+<button type="submit">Add movie</button>
+</div>
+</form>
+<a th:href="@{/viewallmovies}" style="margin-left:190px;">View All Movies</a>
+</div>
+</body>
+</html>
